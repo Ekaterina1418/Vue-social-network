@@ -1,42 +1,34 @@
 <template>
   <div id="app">
-    <main class="block">
-      <div>
-        <div class="parent">
-          <div class="child cgild-1">
-            <img src="./assets/image/logo.png" class="img" alt="logo" />
-          </div>
-          <div class="child child-2">
-            <img src="./assets/image/logotype.svg" class="logotype" />
-          </div>
-        </div>
-        <section class="registration">
-          <div class="div">
-            <div class="border"></div>
-            <h1 class="title">Welcome Back!</h1>
-            <p class="paragraph">Login to continue</p>
-            <face-book />
-            <p class="paragraph-connect">Or connect with you email</p>
-            <inputs-account />
-            <button-log />
-            <div class="border-bottom"></div>
-          </div>
-        </section>
-      </div>
+    <main class="main-block">
+      <backgrond-icon />
+      <section class="registration">
+        <div class="border"></div>
+        <welcome-back />
+        <social-icons />
+        <p class="paragraph-connect">Or connect with you email</p>
+        <auth-form />
+        <button-create />
+        <div class="border-bottom"></div>
+      </section>
     </main>
   </div>
 </template>
 <script>
-import FaceBook from "./components/FaceBook.vue";
-import InputsAccount from "./components/InputsAccount.vue";
-import ButtonLog from "./components/ButtonLog.vue";
+import SocialIcons from "./components/Icons/SocialIcons.vue";
+import AuthForm from "./components/Form/AuthForm.vue";
+import ButtonCreate from "./components/Button/ButtonCreate.vue";
+import BackgrondIcon from "./components/BackGround/BackroundIcon.vue";
+import WelcomeBack from "./components/Welcome/WelcomeBack.vue";
 export default {
   name: "App",
   components: {
-    FaceBook,
-    InputsAccount,
-    ButtonLog,
+    SocialIcons,
+    AuthForm,
+    ButtonCreate,
+    BackgrondIcon,
+    WelcomeBack,
   },
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss" scoped></style>
