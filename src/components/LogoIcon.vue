@@ -8,8 +8,10 @@
 .logo {
   &-container {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    flex: 1;
+    height: 100%;
     padding: 32px 0 ;
   }
 
