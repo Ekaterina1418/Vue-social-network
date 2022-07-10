@@ -1,0 +1,18 @@
+.create-account {
+  &-container {
+    margin-top: 18px;
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 58px;
+    color: #1E1F20;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid rgba(143, 146, 161, 0.2);
+    border-radius: 12px;  
+  }
+}

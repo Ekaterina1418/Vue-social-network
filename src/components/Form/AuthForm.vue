@@ -1,28 +1,39 @@
 <template>
-  <form>
-    <label class="label top">
-      Email
-      <div class="input-icon_email">
-        <input
-          class="input-email"
-          type="text"
-          placeholder="anne.carry@mail.com"
-        />
-        <img src="./image/Check.svg" alt="email" class="check" />
+  <div>
+    <form class="form">
+      <div>
+        <label class="form-label" for="email">Email</label>
+        <div class="form-input-wrapper">
+          <input
+            id="email"
+            class="form-input"
+            name="email"
+            type="text"
+            placeholder="anne.carry@mail.com"
+          />
+          <img class="form-input-icon" src="./image/Check.svg" alt="email" />
+        </div>
       </div>
-    </label>
-    <label class="label bottom"
-      >Password
-      <div class="input-icon_email">
-        <input class="input-email" type="password" />
-        <img src="./image/Eye.svg" class="check" alt="eye" />
+      
+      <div>
+        <label class="form-label" for="password">Password</label>
+        <div class="form-input-wrapper">
+          <input
+            id="password"
+            class="form-input"
+            name="password"
+            type="password"
+            placeholder="password"
+          />
+          <img class="form-input-icon" src="./image/Eye.svg" alt="eye" />
+        </div>
       </div>
-    </label>
-    <div class="login">
-      <button class="button-login">Login</button>
-      <p class="paragraph-login">Forgot Password?</p>
-    </div>
-  </form>
+      
+      <button class="form-button" type="submit">Login</button>
+    </form>
+
+    <p class="form-text">Forgot Password?</p>
+  </div>
 </template>
 
 <script>

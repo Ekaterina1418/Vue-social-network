@@ -1,0 +1,40 @@
+.social {
+  &-buttons-group {
+    display: flex;
+    grid-gap: 10px;
+    margin-top: 28px;
+  }
+
+  &-button {
+    width: 100%;
+    padding: 20px 40px;
+    border: 0;
+    border-radius: 12px;
+  }
+
+  &-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &-text {
+    margin-top: 18px;
+    text-align: center;
+    color: #8f92a1;
+  }
+}
+
+.facebook {
+  background-color: #39579b;
+  
+}
+
+.apple {
+  background-color: #1e1f20;
+  
+}
+
+.google {
+  border: 2px solid rgba(143, 146, 161, 0.4);
+  background-color: #ffff;
+}
