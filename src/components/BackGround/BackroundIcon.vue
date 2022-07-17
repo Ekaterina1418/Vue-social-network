@@ -1,16 +1,24 @@
 <template>
   <div class="main">
-    <div class="block-image">
-      <img src="./image/background.png" class="img" alt="background" />
-    </div>
+    <figure class="block-image">
+      <slot name="background" />
+    </figure>
     <div class="block-image logo">
-      <img src="./image/logotype.svg" class="logotype" />
+      <slot name="logotype" />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "BackgroundIcon",
+  components: {},
+  data() {
+    return {};
+  },
+  props: {},
+  methods: {},
+};
 </script>
 
 <style lang="scss" scoped>

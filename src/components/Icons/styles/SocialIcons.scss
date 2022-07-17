@@ -1,34 +1,42 @@
 .icons {
-  margin: 20px auto;
   display: flex;
-  width: 84%;
+  width: 100%;
 }
 .icon {
-  width: 20%;
+  width: 17%;
   margin: 0 auto;
 }
 .icon-google {
-  width: 31%;
+  width: 19%;
   margin: 0 auto;
 }
-.icon-border {
-  width: 35%;
+.base-button {
+  width: 100%;
   height: 58px;
   border-radius: 12px;
 }
-.facebook {
+
+.base-button--type-facebook {
   background-color: #39579b;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-right: 11px;
+  border: none;
 }
-.apple {
+.base-button--type-apple {
   background-color: #1e1f20;
-  margin-right: 11px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-right: 11px;
+  border: none;
 }
-.google {
+
+.base-button--type-google {
   height: 56px;
   border: 2px solid rgba(143, 146, 161, 0.4);
   background-color: #ffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 1024px) {
+  .icons {
+    display: none;
+  }
 }
