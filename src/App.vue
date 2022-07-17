@@ -1,26 +1,34 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <main class="main-block">
+      <backgrond-icon />
+      <section class="registration">
+        <div class="border"></div>
+        <welcome-back />
+        <social-icons />
+        <p class="paragraph-connect">Or connect with you email</p>
+        <auth-form />
+        <button-create />
+        <div class="border-bottom"></div>
+      </section>
+    </main>
+  </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+import SocialIcons from "./components/Icons/SocialIcons.vue";
+import AuthForm from "./components/Form/AuthForm.vue";
+import ButtonCreate from "./components/Button/ButtonCreate.vue";
+import BackgrondIcon from "./components/BackGround/BackroundIcon.vue";
+import WelcomeBack from "./components/Welcome/WelcomeBack.vue";
+export default {
+  name: "App",
+  components: {
+    SocialIcons,
+    AuthForm,
+    ButtonCreate,
+    BackgrondIcon,
+    WelcomeBack,
+  },
+};
+</script>
+<style lang="scss" scoped></style>
