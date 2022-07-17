@@ -1,32 +1,41 @@
 <template>
   <form>
-    <label class="label top">
-      Email
+    <div class="element-auxiliary top">
+      <label class="label-input"> EMAIL </label>
       <div class="input-icon_email">
         <input
           class="input-email"
           type="text"
           placeholder="anne.carry@mail.com"
         />
-        <img src="./image/Check.svg" alt="email" class="check" />
+        <img class="check" src="./image/Check.svg" alt="email" />
       </div>
-    </label>
-    <label class="label bottom"
-      >Password
+    </div>
+    <div class="element-auxiliary bottom">
+      <label class="label-input">PASSWORD </label>
       <div class="input-icon_email">
         <input class="input-email" type="password" />
-        <img src="./image/Eye.svg" class="check" alt="eye" />
+        <img class="check" src="./image/Eye.svg" alt="eye" />
       </div>
-    </label>
+
+      <a class="paragraph-login_desc" @click="addPassword">Forgot Password?</a>
+    </div>
     <div class="login">
       <button class="button-login">Login</button>
-      <p class="paragraph-login">Forgot Password?</p>
+      <a class="paragraph-login" @click="addPassword">Forgot Password?</a>
     </div>
   </form>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "AuthForm",
+  methods: {
+    addPassword() {
+      this.$router.push({ name: "password-recovery" });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

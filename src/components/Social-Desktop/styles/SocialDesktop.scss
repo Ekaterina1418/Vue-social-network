@@ -1,0 +1,55 @@
+.block-social {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .block-social {
+    display: flex;
+    flex-direction: column;
+    width: 88%;
+    margin: 0 6%;
+  }
+  .paragraph-desktop {
+    margin: 30px 0;
+    color: #8f92a1;
+    text-align: center;
+  }
+  .facebook-decktop {
+    background-color: #39579b;
+    border-radius: 12px;
+    height: 58px;
+    margin-bottom: 20px;
+    border: none;
+  }
+  .apple-desktop {
+    background-color: #1e1f20;
+    border-radius: 12px;
+    height: 58px;
+    margin-bottom: 20px;
+    border: none;
+  }
+  .google-desktop {
+    border: 2px solid rgba(143, 146, 161, 0.4);
+    border-radius: 12px;
+    height: 58px;
+    background-color: #fff;
+  }
+  .icons-text {
+    font-family: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    margin-left: 10px;
+  }
+  .icons-text_google {
+    font-family: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1e1f20;
+    margin-left: 10px;
+  }
+  .text-button {
+    display: flex;
+    justify-content: center;
+  }
+}

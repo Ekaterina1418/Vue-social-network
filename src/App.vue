@@ -1,34 +1,24 @@
 <template>
   <div id="app">
-    <main class="main-block">
-      <backgrond-icon />
-      <section class="registration">
-        <div class="border"></div>
-        <welcome-back />
-        <social-icons />
-        <p class="paragraph-connect">Or connect with you email</p>
-        <auth-form />
-        <button-create />
-        <div class="border-bottom"></div>
-      </section>
-    </main>
+    <router-link to="/"></router-link>
+    <router-link to="{name:'signup'}"></router-link>
+    <router-link to="{name:'password-recovery'}"></router-link>
+    <div>
+      <router-view />
+    </div>
   </div>
 </template>
+
 <script>
-import SocialIcons from "./components/Icons/SocialIcons.vue";
-import AuthForm from "./components/Form/AuthForm.vue";
-import ButtonCreate from "./components/Button/ButtonCreate.vue";
-import BackgrondIcon from "./components/BackGround/BackroundIcon.vue";
-import WelcomeBack from "./components/Welcome/WelcomeBack.vue";
 export default {
   name: "App",
-  components: {
-    SocialIcons,
-    AuthForm,
-    ButtonCreate,
-    BackgrondIcon,
-    WelcomeBack,
+  components: {},
+  data() {
+    return {
+      page: "",
+    };
   },
 };
 </script>
+
 <style lang="scss" scoped></style>

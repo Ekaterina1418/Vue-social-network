@@ -1,12 +1,19 @@
 <template>
-  <div>
-    <h1 class="title">Welcome Back!</h1>
-    <p class="paragraph">Login to continue</p>
+  <div class="text">
+    <img class="logo" src="./image/logotype.svg" />
+    <slot />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "WelcomeBack",
+  data() {
+    return {
+      disible: true,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>

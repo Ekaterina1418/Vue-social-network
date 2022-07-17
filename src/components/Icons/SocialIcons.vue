@@ -1,21 +1,39 @@
 <template>
   <div class="icons">
-    <button class="icon-border facebook">
-      <img src="./image/Facebook2.svg" alt="facebook" class="icon" />
+    <button class="base-button"
+     v-on="$listeners"
+     v-bind="$attrs"
+    :class="buttonClasses">
+      <slot />
     </button>
-    <button class="icon-border apple">
-      <img src="./image/Apple.svg" alt="apple" class="icon" />
-    </button>
-    <button class="icon-border google">
-      <img src="./image/Google2.svg" alt="google" class="icon-google" />
-    </button>
+   
   </div>
 </template>
 
 <script>
 export default {
   name: "SocialIcons",
+  props: {
+    type: {
+    type: String,
+    default: "basic",
+    validator: function(value) {
+      return ["facebook", "apple","google"]
+    },
+    },
+  },
+  computed: {
+buttonClasses() {
+  return {
+        "base-button--type-basic": this.type === "basic" || this.type === "",
+        "base-button--type-apple": this.type === "apple",
+        "base-button--type-facebook": this.type === "facebook",
+        "base-button--type-google": this.type === "google",
+  }
+}
+  }
 };
+
 </script>
 
 <style lang="scss" scoped>
