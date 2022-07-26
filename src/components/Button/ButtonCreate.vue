@@ -1,8 +1,8 @@
 <template>
   <div class="form-create">
-    <button class="button-create" @click="$router.push({ name: 'signup' })">
-      Create an account
-    </button>
+    <a class="button-create" href="/">
+      <p class="text-link">Create an account</p>
+    </a>
   </div>
 </template>
 

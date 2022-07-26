@@ -1,7 +1,25 @@
+$white: #ffffff;
+$width: 1024px;
 * {
   padding: 0;
   margin: 0;
-  font-family: Arial;
+}
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
 }
 .main-block {
   position: relative;
@@ -9,24 +27,45 @@
 .grid {
   display: grid;
   grid-template-rows: 27% 1fr;
+  @media (min-width: $width) {
+    grid-template-rows: none;
+    grid-template-columns: 55% 45%;
+  }
 }
 .grid-password {
   display: grid;
   grid-template-rows: 2fr 1fr;
+  @media (min-width: $width) {
+    grid-template-rows: none;
+    grid-template-columns: 55% 45%;
+  }
 }
 .registration {
   margin-top: -30px;
-  background-color: #ffffff;
+  background-color: $white;
   width: 100%;
   height: 100%;
   border-radius: 30px;
+  @media (min-width: $width) {
+    margin-left: -5%;
+    margin-top: 0;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+  }
 }
 .registration-form {
-  background-color: #ffffff;
+  background-color: $white;
   border-radius: 30px;
   height: 100%;
   width: 100%;
   margin-top: -63px;
+
+  @media (min-width: $width) {
+    margin-left: -5%;
+    margin-top: 0;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+  }
 }
 .divider {
   border-bottom: 5px solid rgb(167, 164, 164);
@@ -36,49 +75,30 @@
 }
 
 .paragraph-connect {
-  font-size: 14px;
-  line-height: 20px;
   color: #8f92a1;
   text-align: center;
 }
 .paragraph {
   margin: 10px 0 30px 0;
   text-align: center;
-  color: #fff;
+  color: $white;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
 }
 .flex-icons {
   display: flex;
   margin: 28px auto;
   width: 90%;
 }
-
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-rows: none;
-    grid-template-columns: 55% 45%;
+@media (min-width: 768px) {
+  .logotype {
+    width: 15%;
+    top: 9%;
   }
-  .grid-password {
-    grid-template-rows: none;
-    grid-template-columns: 55% 45%;
-  }
-  .registration {
-    margin-left: -5%;
-    margin-top: 0;
-    border-top-left-radius: 5%;
-    border-bottom-left-radius: 5%;
-  }
-  .registration-form {
-    margin-left: -5%;
-    margin-top: 0;
-    border-top-left-radius: 5%;
-    border-bottom-left-radius: 5%;
-  }
+}
+@media (min-width: $width) {
   .right-block {
     margin: 80px auto;
-    width: 80%;
+    width: 70%;
   }
 
   .divider {
@@ -86,5 +106,18 @@
   }
   .paragraph-connect {
     display: none;
+  }
+}
+@media (min-width: 425px) {
+  .logotype-password {
+    width: 35%;
+    top: 30%;
+  }
+}
+@media (min-width: 768px) {
+  .logotype-password {
+    width: 30%;
+    top: 30%;
+    left: 30%;
   }
 }

@@ -1,3 +1,5 @@
+$width: 1024px;
+
 .block-image {
   height: 100%;
 }
@@ -8,43 +10,38 @@
   top: 12%;
   left: 42%;
 }
+
 .logotype-password {
   position: absolute;
   top: 32%;
   left: 28%;
   margin: 0 auto;
-}
+  }
+  
 .img {
   background: url(./image/background.png) no-repeat;
   width: 100%;
   height: 100%;
   background-size: cover;
+
+  @media (min-width: $width) {
+    background: url(./image/background-image.jpg) no-repeat;
+    background-size: cover;
+  }
 }
 .img-password {
   background: url(./image/Image.png) no-repeat;
   width: 100%;
   height: 100%;
   background-size: cover;
-}
-@media (min-width: 768px) {
-  .logotype-password {
-    width: 30%;
-  }
-}
-@media (min-width: 425px) {
-  .logotype-password {
-    width: 35%;
-  }
-}
-@media (min-width: 1024px) {
-  .img {
-    background: url(./image/background2.jpg) no-repeat;
-    width: 100%;
-  }
-  .img-password {
-    background: url(./image/background2.jpg) no-repeat;
+  @media (min-width: $width) {
+    background: url(./image/background-image.jpg) no-repeat;
+    background-size: cover;
     height: 100vh;
   }
+}
+
+@media (min-width: $width) {
   .logo {
     display: none;
   }

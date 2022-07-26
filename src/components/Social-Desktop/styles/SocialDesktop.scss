@@ -1,13 +1,22 @@
+$white: #ffffff;
+$width: 1024px;
+
 .block-social {
   display: none;
-}
-
-@media (min-width: 1024px) {
-  .block-social {
+  @media (min-width: $width) {
     display: flex;
     flex-direction: column;
     width: 88%;
     margin: 0 6%;
+  }
+}
+
+@media (min-width: $width) {
+  .block-social {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
   }
   .paragraph-desktop {
     margin: 30px 0;
@@ -36,15 +45,11 @@
   }
   .icons-text {
     font-family: 700;
-    font-size: 14px;
-    line-height: 20px;
-    color: #fff;
+    color: $white;
     margin-left: 10px;
   }
   .icons-text_google {
     font-family: 700;
-    font-size: 14px;
-    line-height: 20px;
     color: #1e1f20;
     margin-left: 10px;
   }
