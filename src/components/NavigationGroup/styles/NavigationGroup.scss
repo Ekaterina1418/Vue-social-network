@@ -1,0 +1,36 @@
+.block-group {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.group-tasks {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+.list-direct {
+  margin: 28px auto;
+  color: #1e1f20;
+  font-weight: 700;
+  @media (min-width: 1024px) {
+    margin: 0;
+  }
+}
+.list {
+  color: rgba(30, 31, 32, 0.4);
+  font-weight: 700;
+  margin: 28px auto;
+  @media (min-width: 1024px) {
+    margin: 0;
+  }
+}
+.title-inbox {
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+    margin: 0 0 40px;
+  }
+}
