@@ -4,7 +4,7 @@
             <div class="position-input">
                 <input
                     class="border-icon_search"
-                    v-model.trim="search"
+                    @input="$emit('input', $event.target.value)"
                     type="text"
                 />
                 <img class="svg-search" src="./icons/Search.svg" alt="search" />
@@ -17,29 +17,19 @@
     </nav>
 </template>
 
-<script>
-export default {
-    name: 'NavigationChat',
-    data() {
-        return {
-            search:this.value
-        };
-    },
-    props: {
-        value: {
-            type: String,
-            required: true,
-        },
-       
-    },
-    watch: {
-search(val) {
- this.$emit('search',val)
- 
+<script lang="ts">
+import { Component, Vue, Watch, Model } from 'vue-property-decorator';
+@Component
+export default class CreateAccount extends Vue {
+    // @Prop()  value!: string
+    // val:string = this.value
+    @Model('input', { type: String }) readonly value!: string;
+
+    @Watch('child')
+    search(val: string) {
+        this.$emit('search', val);
+    }
 }
-    },
-    methods: {},
-};
 </script>
 
 <style lang="scss" scoped>

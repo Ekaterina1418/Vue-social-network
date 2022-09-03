@@ -13,7 +13,7 @@
                 <p class="icons-text">Connect with GitHub</p>
             </div>
         </button>
-        <button  class="google-desktop" @click="google">
+        <button class="google-desktop" @click="google">
             <div class="text-button">
                 <img src="./image/Google2.svg" alt="google" />
                 <p class="icons-text_google">Connect with Google+</p>
@@ -22,36 +22,35 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'SocialDesktop',
-    methods: {
-        async google() {
+<script lang="ts">
+    import { Component, Vue } from 'vue-property-decorator';
+    @Component
+export default class extends Vue {
+   
+        async google():Promise<void> {
             try {
-
                 await this.$store.dispatch('google');
                 this.$router.push('/messages');
-            // eslint-disable-next-line no-empty
-            } catch(e) {}
-        },
-       async facebook() {
-        try {
-            await this.$store.dispatch('facebook');
-            this.$router.push('/messages')
-
-        // eslint-disable-next-line no-empty
-        }catch(e)  {}
-        },
-        async gitHub() {
-            try {
-
-                await this.$store.dispatch('gitHub');
-               this.$router.push('/messages');
-            // eslint-disable-next-line no-empty
-            }catch(e) {}
+                // eslint-disable-next-line no-empty
+            } catch (e) {}
         }
-    },
-};
+        async facebook():Promise<void> {
+            try {
+                await this.$store.dispatch('facebook');
+                this.$router.push('/messages');
+
+                // eslint-disable-next-line no-empty
+            } catch (e) {}
+        }
+        async gitHub():Promise<void> {
+            try {
+                await this.$store.dispatch('gitHub');
+                this.$router.push('/messages');
+                // eslint-disable-next-line no-empty
+            } catch (e) {}
+        }
+    }
+
 </script>
 
 <style lang="scss" scoped>

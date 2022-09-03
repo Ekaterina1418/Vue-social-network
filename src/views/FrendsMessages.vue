@@ -1,13 +1,13 @@
+
 <template>
     <main class="main-for-message">
         <div class="block">
-            <navigation-in-chat :value="search" @search="search = $event" />
+            <navigation-in-chat v-model="searchValue" @input="search" />
             <section class="background">
                 <navigation-group>
                     <h1 class="title-inbox">Inbox</h1>
                 </navigation-group>
-                <div v-for="(item,index) in names" :key="index">
-                <direct-messages :names="item.name">
+               <direct-messages>
                     <template v-slot:image>
                         <img src="../assets/image/Avatar.svg" alt="avatar" />
                     </template>
@@ -15,7 +15,7 @@
                         <div class="amount">1</div>
                     </template>
                 </direct-messages>
-                <direct-messages  :names="item.name">
+                <direct-messages  >
                     <template v-slot:image>
                         <img src="../assets/image/Avatar2.svg" alt="avatar" />
                     </template>
@@ -56,7 +56,7 @@
                         <img src="../assets/image/Avatar8.svg" alt="avatar" />
                     </template>
                 </direct-messages>
-                </div>
+              
             </section>
         </div>
         <div class="block-chat">
@@ -137,15 +137,15 @@
     </main>
 </template>
 
-<script>
-import NavigationInChat from '../components/Navigation-in-chat/NavigationInChat.vue';
-import NavigationGroup from '../components/NavigationGroup/NavigationGroup.vue';
-import DirectMessages from '../components/Direct-Messages/DirectMessages.vue';
-import BottomNav from '../components/Bottom-nav/BottomNav.vue';
-import ChatInDesktop from '../components/Chat/ChatInDesktop.vue';
-import LogOut from '../components/User/LogOut.vue';
-export default {
-    name: 'FrendMessages',
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import NavigationInChat from '@/components/Navigation-in-chat/NavigationInChat.vue';
+import NavigationGroup from '@/components/NavigationGroup/NavigationGroup.vue';
+import DirectMessages from '@/components/Direct-Messages/DirectMessages.vue';
+import BottomNav from '@/components/Bottom-nav/BottomNav.vue';
+import ChatInDesktop from '@/components/Chat/ChatInDesktop.vue';
+import LogOut from '@/components/User/LogOut.vue';
+@Component({
     components: {
         NavigationInChat,
         NavigationGroup,
@@ -153,48 +153,53 @@ export default {
         BottomNav,
         ChatInDesktop,
         LogOut,
-    },
-    data() {
-        return {
-            search: '',
-            names: [
-                {
-                    name: 'Billy Green',
-                    // message: 'Thank you for sharing',
-                },
+    }
+})
 
-                {
-                    name: 'Gabriella Solis',
-                    // message: 'Thank you for sharing',
-                },
-                {
-                    name: 'Tom Scavo',
-                },
-                {
-                    name: 'Lynette Scavo',
-                },
-                {
-                    name: 'Mike Delfino',
-                },
-                {
-                    name: 'Gabriella Solis',
-                },
-                {
-                    name: 'Carlos Solis',
-                },
-                {
-                    name: 'Idie Britt',
-                },
-            ],
-        };
+export default class CreateAccount extends Vue  {
+
+   
+      
+    
+             searchValue ='';
+            names!: [
+    {
+      name: 'Billy Green';
+
     },
 
-    computed: {
-        filterNames() {
-            return console.log(this.names);
-        },
+    {
+      name: 'Gabriella Solis';
+
     },
-};
+    {
+      name: 'Tom Scavo';
+    },
+    {
+      name: 'Lynette Scavo';
+    },
+    {
+      name: 'Mike Delfino';
+    },
+    {
+      name: 'Gabriella Solis';
+    },
+    {
+      name: 'Carlos Solis';
+    },
+    {
+      name: 'Idie Britt';
+    }
+  ];
+        
+    
+    search(){
+        console.log(this.searchValue)
+   }
+    
+        
+    
+}
 </script>
 
 <style>

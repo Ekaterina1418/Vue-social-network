@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="login">
-            <button class="button-login"  @click.prevent="submitHandler">
+            <button class="button-login" @click.prevent="submitHandler">
                 Create an account
             </button>
             <p class="paragraph-login">Alreedy have an account Login</p>
@@ -71,64 +71,54 @@
     </form>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 import { email } from 'vuelidate/lib/validators';
 import { required, minLength } from 'vuelidate/lib/validators';
-import { hasUppercase, hasLowercase, hasSpecialChars } from './validations';
-export default {
-    name: 'FormSignup',
-    data() {
+import {
+    hasUppercase,
+    hasLowercase,
+    hasSpecialChars,
+} from '@/vuelidate/validations';
+@Component
+export default class FormSignup extends Vue {
+    name = '';
+    email = '';
+    password = '';
+
+    validations() {
         return {
-            name: '',
-            email: '',
-            password: '',
+            name: {
+                required,
+                minLength: minLength(2),
+            },
+            email: {
+                required,
+                email,
+            },
+            password: {
+                required,
+                minLength: minLength(6),
+                hasUppercase,
+                hasLowercase,
+                hasSpecialChars,
+            },
         };
-    },
-    validations: {
-        name: {
-            required,
-            minLength: minLength(2),
-        },
-        email: {
-            required,
-            email,
-        },
-        password: {
-            required,
-            minLength: minLength(6),
-            hasUppercase,
-            hasLowercase,
-            hasSpecialChars,
-        },
-    },
-    
-    methods: {
-        async submitHandler() {
-            const forData = {
-                email: this.email,
-                password: this.password,
-                name:this.name
-            };
-             try {
-                await this.$store.dispatch('register', forData);
-               
-               
-             } catch (e) {
-                 // eslint-disable-next-line no-undef
-                //  switch (error.code) {
-                //     case 'auth/user-not-found':
-                //         alert('Пользователь не найден');
-                //         break;
-                //     case 'auth/wrong-password':
-                //         alert('Неправильный пароль');
-                //         break;
-                //     default:
-                //         alert('Что-то пошло не так');
-                // }
-             }
-        },
-    },
-};
+    }
+
+    async submitHandler():Promise<void> {
+        const forData = {
+            email: this.name,
+            password: this.password,
+            name: this.name,
+        };
+        try {
+            await this.$store.dispatch('register', forData);
+        } catch (e) {
+            // eslint-disable-next-line no-undef
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -8,28 +8,21 @@ import { auth } from '../firebase';
 Vue.use(VueRouter);
 
 const routes = [
-   
     {
         path: '/',
         name: 'signup',
         component: CreateAccount,
-       
     },
     {
         path: '/signin',
         name: 'signin',
         component: AutorizationPage,
-        meta: {
-          requiresAuth: true,
-      },
     },
     {
         path: '/password-recovery',
         name: 'password-recovery',
         component: PasswordRecovery,
-        meta: {
-            requiresAuth: true,
-        },
+       
     },
     {
         path: '/messages',
@@ -39,7 +32,6 @@ const routes = [
             requiresAuth: true,
         },
     },
-   
 ];
 
 // const routes: Array<RouteConfig> = [
@@ -60,16 +52,13 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes,
 });
-router.beforeEach((to,from,next) => {
-  if(to.path === './signin' && auth.currentUser) {
-    next('/messages')
-    return
-  }
-   if(to.matched.some(record => record.meta.requiresAuth) && !auth.currentUser) {
-    next('/')
-    return
-   }
-   
-   next()
-})
+router.beforeEach((to, from, next) => {
+    const currentUser = auth.currentUser;
+    const requierAuth = to.matched.some((record) => record.meta.requiresAuth);
+    if (requierAuth && !currentUser) {
+        next('/');
+    } else {
+        next();
+    }
+});
 export default router;

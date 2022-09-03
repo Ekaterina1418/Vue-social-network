@@ -10,30 +10,27 @@
             />
             <img class="check" src="./image/Check.svg" alt="email" />
         </div>
-        <button class="send-email" @click.prevent="forgotPassword">Send Email</button>
+        <button class="send-email" @click.prevent="forgotPassword">
+            Send Email
+        </button>
     </form>
 </template>
 
-<script>
-export default {
-    name: 'InputForRecovery',
-    data() {
-        return {
-            email: '',
-        };
-    },
-    methods: {
-        async forgotPassword() {
-           try {
-               await this.$store.dispatch('forgotPassword', this.email);
-                this.$router.push('/signin');
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+@Component
+export default class InputForRecovery extends Vue {
+    email = '';
 
-           // eslint-disable-next-line no-empty
-           } catch(error) {}
-               
-        },
-    },
-};
+    async forgotPassword(): Promise<void> {
+        try {
+            await this.$store.dispatch('forgotPassword', this.email);
+            this.$router.push('/signin');
+
+            // eslint-disable-next-line no-empty
+        } catch (error) {}
+    }
+}
 </script>
 
 <style lang="scss" scoped>

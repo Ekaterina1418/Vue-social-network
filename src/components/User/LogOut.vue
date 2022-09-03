@@ -6,16 +6,18 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'LogOut',
-    methods: {
-    async  logout() {
+<script lang="ts">
+  import { Component, Vue } from 'vue-property-decorator';
+  @Component
+export default class LogOut extends Vue {
+   
+  
+    async  logout():Promise<void> {
        await this.$store.dispatch('logout')
 
       }
-    }
-};
+    
+}
 </script>
 
 <style lang="sass" scoped>

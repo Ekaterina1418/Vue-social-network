@@ -15,6 +15,7 @@ import {
     signInWithEmailAndPassword,
     signOut,
 } from 'firebase/auth';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -96,20 +97,15 @@ export default new Vuex.Store({
             commit('CLEAR_USER');
             router.push('/signin');
         },
-        fetchUser({ commit }) {
-            auth.onAuthStateChanged(async (user) => {
-                if (user === null) {
-                    commit('CLEAR_USER');
-                } else {
-                    commit('SET_USER', user);
-                
-                    // if(router.onReady() && router.currentRoute.path === '/') {
-                    //     router.push('/messages')
-                    // }
-                }
-                
-            });
-        },
+        // fetchUser({ commit }) {
+        //     auth.onAuthStateChanged(async (user) => {
+        //         if (user === null) {
+        //             commit('CLEAR_USER');
+        //         } else {
+        //             commit('SET_USER', user);
+        //         }
+        //     });
+        // },
         async forgotPassword({ commit }, email) {
             try {
                 await sendPasswordResetEmail(auth, email);
@@ -156,6 +152,10 @@ export default new Vuex.Store({
             commit('SET_USER', auth.currentUser);
         },
     },
+    getters: {
+        chekAuthUser(state) {
+            return state.user != null;
+        },
+    },
     modules: {},
 });
-

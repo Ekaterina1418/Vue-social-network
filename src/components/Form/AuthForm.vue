@@ -66,49 +66,50 @@
     </form>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 import { email } from 'vuelidate/lib/validators';
 import { required, minLength } from 'vuelidate/lib/validators';
-import { hasUppercase, hasLowercase, hasSpecialChars } from './validations';
-export default {
-    name: 'AuthForm',
-    data() {
-        return {
-            email: '',
-            password: '',
-        };
-    },
-    validations: {
-        email: {
-            required,
-            email,
-        },
-        password: {
-            required,
-            minLength: minLength(6),
-            hasUppercase,
-            hasLowercase,
-            hasSpecialChars,
-        },
-    },
+import {
+    hasUppercase,
+    hasLowercase,
+    hasSpecialChars,
+} from '@/vuelidate/validations';
+@Component
+export default class AuthForm extends Vue {
+    email = '';
+    password = '';
 
-    methods: {
-        addPassword() {
-            this.$router.push({ name: 'password-recovery' });
-        },
-        async submitHandler() {
-            const forData = {
-                email: this.email,
-                password: this.password,
-            };
-            try {
-                await this.$store.dispatch('login', forData);
-              
-                // eslint-disable-next-line no-empty
-            } catch (e) {}
-        },
-    },
-};
+    validations() {
+        return {
+            email: {
+                required,
+                email,
+            },
+            password: {
+                required,
+                minLength: minLength(6),
+                hasUppercase,
+                hasLowercase,
+                hasSpecialChars,
+            },
+        };
+    }
+    addPassword(): void {
+        this.$router.push({ name: 'password-recovery' });
+    }
+    async submitHandler():Promise<void>  {
+        const forData = {
+            email: this.email,
+            password: this.password,
+        }
+        try {
+            await this.$store.dispatch('login', forData);
+
+            // eslint-disable-next-line no-empty
+        } catch (e) {}
+    }
+}
 </script>
 
 <style lang="scss" scoped>

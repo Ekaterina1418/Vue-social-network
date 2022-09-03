@@ -5,15 +5,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "WelcomeBack",
-  data() {
-    return {
-      disible: true,
-    };
-  },
-};
+<script lang="ts">
+  import { Component, Vue } from 'vue-property-decorator';
+  @Component
+  export default class AutorizationPage extends Vue {
+   disible = true
+
+}
 </script>
 
 <style lang="scss" scoped>
