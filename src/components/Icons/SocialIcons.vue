@@ -1,41 +1,41 @@
 <template>
-  <div class="icons">
-    <button class="base-button"
-     v-on="$listeners"
-     v-bind="$attrs"
-    :class="buttonClasses">
-      <slot />
-    </button>
-   
-  </div>
+    <div class="icons">
+        <button
+            class="base-button"
+            v-on="$listeners"
+            v-bind="$attrs"
+            :class="buttonClasses"
+        >
+            <slot />
+        </button>
+    </div>
 </template>
 
-<script>
-export default {
-  name: "SocialIcons",
-  props: {
-    type: {
-    type: String,
-    default: "basic",
-    validator: function(value) {
-      return ["facebook", "apple","google"]
-    },
-    },
-  },
-  computed: {
-buttonClasses() {
-  return {
-        "base-button--type-basic": this.type === "basic" || this.type === "",
-        "base-button--type-apple": this.type === "apple",
-        "base-button--type-facebook": this.type === "facebook",
-        "base-button--type-google": this.type === "google",
-  }
-}
-  }
-};
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
+@Component
+export default class SocialIcons extends Vue {
+    @Prop({
+        type: String,
+        default: 'basic',
+        validator: (value: string) => {
+            return ['facebook', 'apple', 'google'].includes(value);
+        },
+    })
+    social: string | undefined;
 
+    get buttonClasses() {
+        return {
+            'base-button--type-basic':
+                this.social === 'basic' || this.social === '',
+            'base-button--type-apple': this.social === 'apple',
+            'base-button--type-facebook': this.social === 'facebook',
+            'base-button--type-google': this.social === 'google',
+        };
+    }
+}
 </script>
 
 <style lang="scss" scoped>
-@import "./styles/SocialIcons.scss";
+@import './styles/SocialIcons.scss';
 </style>

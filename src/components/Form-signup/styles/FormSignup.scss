@@ -1,33 +1,38 @@
+$white: #ffffff;
+$width: 1024px;
+
 .element-auxiliary {
   display: flex;
   flex-direction: column;
-  font-size: 13px;
+  width: 100%;
   font-weight: 700;
-  line-height: 20px;
-}
-.top {
-  margin: 28px 6% 18px;
 }
 .input-icon_email {
   position: relative;
 }
 .bottom {
-  margin: 0 6% 18px;
+  margin: 20px 0;
+}
+.form {
+  width: 90%;
+  margin: 0 auto;
+}
+.bottom-input {
+  margin: 20px 0 40px 0;
 }
 .input-email {
-  width: 87%;
+  width: 88%;
   height: 48px;
   padding: 0 6%;
   border: 2px solid rgba($color: #8f92a1, $alpha: 0.2);
-
   border-radius: 4px;
-  margin: 10px 0 18px 0;
+  margin: 10px 0 3px 0;
 }
-.label-inpit {
-  .label-input {
-    color: #1e1f20;
-  }
+
+.label-input {
+  color: #1e1f20;
 }
+
 .check {
   position: absolute;
   top: 35%;
@@ -40,13 +45,11 @@
   height: 58px;
   text-align: center;
   background-color: #79d0f1;
-  width: 88%;
-  margin: 0 6%;
+  width: 100%;
+  margin: 0 auto;
   border-radius: 15px;
   border: none;
-  font-size: 14px;
-  line-height: 20px;
-  color: #ffffff;
+  color: $white;
   font-weight: 700;
 }
 
@@ -56,6 +59,9 @@
   text-align: center;
   color: #8f92a1;
   margin: 18px 0;
+  @media (min-width: $width) {
+    display: none;
+  }
 }
 .is-invalid {
   border-color: red;
@@ -63,8 +69,9 @@
 .invalid {
   color: crimson;
 }
-@media (min-width: 1024px) {
-  .paragraph-login {
-    display: none;
-  }
+.error {
+  color: #dd4f4f;
+}
+.error-border {
+  border-color: #dd4f4f;
 }

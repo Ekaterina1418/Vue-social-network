@@ -1,3 +1,6 @@
+$white: #ffffff;
+$width: 1024px;
+
 .element-auxiliary {
   display: flex;
   flex-direction: column;
@@ -6,15 +9,20 @@
   line-height: 20px;
 }
 .top {
-  margin: 28px 6% 18px;
+  margin: 28px 0 18px;
+}
+.form {
+  width: 90%;
+  margin: 0 auto;
 }
 .input-icon_email {
   position: relative;
 }
 .bottom {
-  margin: 0 6% 18px;
+  margin: 0 0 18px;
 }
 .input-email {
+  position: relative;
   width: 87%;
   height: 48px;
   padding: 0 6%;
@@ -39,25 +47,41 @@
   height: 58px;
   text-align: center;
   background-color: #0659fd;
-  width: 88%;
-  margin: 0 6%;
+  width: 100%;
+  margin: 0 auto;
   border-radius: 15px;
   border: none;
-  font-size: 14px;
-  line-height: 20px;
-  color: #ffffff;
+  color: $white;
   font-weight: 700;
 }
 .paragraph-login_desc {
   display: none;
+  @media (min-width: $width) {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: #8f92a1;
+    text-align: start;
+    margin-bottom: 12px;
+  }
 }
 .paragraph-login {
-  font-size: 14px;
+  text-decoration: none;
   line-height: 22px;
   font-weight: 400;
   text-align: center;
   color: #8f92a1;
   margin: 18px 0;
+  @media (min-width: $width) {
+    display: none;
+  }
+}
+.error {
+  color: #dd4f4f;
+  margin-top: -17px;
+}
+.error-border {
+  border-color: #dd4f4f;
 }
 @media (min-width: 1024px) {
   .paragraph-login {

@@ -1,5 +1,12 @@
+$width: 1024px;
+
 .logo {
   display: none;
+  @media (min-width: $width) {
+    display: block;
+    width: 50%;
+    margin-bottom: 40px;
+  }
 }
 .paragraph-signin {
   display: none;
@@ -12,6 +19,15 @@
 }
 .title {
   display: none;
+  @media (min-width: $width) {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #1e1f20;
+    text-align: start;
+  }
 }
 .title-mobile {
   margin-bottom: 10px;
@@ -20,6 +36,9 @@
   line-height: 30px;
   color: #1e1f20;
   text-align: start;
+  @media (min-width: $width) {
+    display: none;
+  }
 }
 .title-mobile-password {
   margin-bottom: 10px;
@@ -32,41 +51,18 @@
 .paragraph-mobile {
   font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
   color: #8f92a1;
   margin: 0;
   text-align: start;
+  @media (min-width: $width) {
+    display: none;
+  }
 }
 .paragraph-desktop {
   display: none;
-}
-
-@media (min-width: 1024px) {
-  .title-mobile {
-    display: none;
-  }
-  .title {
+  @media (min-width: $width) {
     display: block;
-    margin-bottom: 10px;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 30px;
-    color: #1e1f20;
-    text-align: start;
-  }
-  .logo {
-    display: block;
-    width: 50%;
-    margin-bottom: 40px;
-  }
-  .paragraph-mobile {
-    display: none;
-  }
-  .paragraph-desktop {
-    display: block;
-    font-size: 14px;
     font-weight: 500;
-    line-height: 20px;
     color: #8f92a1;
     margin: 0;
     text-align: start;

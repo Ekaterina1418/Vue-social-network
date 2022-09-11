@@ -1,0 +1,30 @@
+.block-chat {
+  display: none;
+}
+
+@media(min-width:1024px) {
+
+  .block-massage {
+    display: flex;
+   
+  }
+  .count-message {
+    width: 48px;
+    height: 48px;
+    background: #79d0f1;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 22.32px;
+    line-height: 15px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  .block-profile {
+    display: flex;
+    justify-content: end;
+    
+  }
+}

@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <router-link to="/"></router-link>
-    <router-link to="{name:'signup'}"></router-link>
-    <router-link to="{name:'password-recovery'}"></router-link>
+    <router-link to="{name:'signin'}"></router-link>
+    <router-link to="{name:'password-recovery'}"></router-link> 
     <div>
       <router-view />
-    </div>
+</div>
   </div>
-</template>
+</template> 
 
 <script>
 export default {
@@ -18,6 +18,9 @@ export default {
       page: "",
     };
   },
+  created() {
+    this.$store.dispatch('fetchUser')
+  }
 };
 </script>
 
