@@ -1,4 +1,3 @@
-
 <template>
     <main class="main-for-message">
         <div class="block">
@@ -7,7 +6,7 @@
                 <navigation-group>
                     <h1 class="title-inbox">Inbox</h1>
                 </navigation-group>
-               <direct-messages>
+                <direct-messages>
                     <template v-slot:image>
                         <img src="../assets/image/Avatar.svg" alt="avatar" />
                     </template>
@@ -15,7 +14,7 @@
                         <div class="amount">1</div>
                     </template>
                 </direct-messages>
-                <direct-messages  >
+                <direct-messages>
                     <template v-slot:image>
                         <img src="../assets/image/Avatar2.svg" alt="avatar" />
                     </template>
@@ -56,7 +55,6 @@
                         <img src="../assets/image/Avatar8.svg" alt="avatar" />
                     </template>
                 </direct-messages>
-              
             </section>
         </div>
         <div class="block-chat">
@@ -138,7 +136,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator';
 import NavigationInChat from '@/components/Navigation-in-chat/NavigationInChat.vue';
 import NavigationGroup from '@/components/NavigationGroup/NavigationGroup.vue';
 import DirectMessages from '@/components/Direct-Messages/DirectMessages.vue';
@@ -153,52 +151,41 @@ import LogOut from '@/components/User/LogOut.vue';
         BottomNav,
         ChatInDesktop,
         LogOut,
-    }
+    },
 })
+export default class CreateAccount extends Vue {
+    searchValue = '';
+    names!: [
+        {
+            name: 'Billy Green';
+        },
 
-export default class CreateAccount extends Vue  {
+        {
+            name: 'Gabriella Solis';
+        },
+        {
+            name: 'Tom Scavo';
+        },
+        {
+            name: 'Lynette Scavo';
+        },
+        {
+            name: 'Mike Delfino';
+        },
+        {
+            name: 'Gabriella Solis';
+        },
+        {
+            name: 'Carlos Solis';
+        },
+        {
+            name: 'Idie Britt';
+        }
+    ];
 
-   
-      
-    
-             searchValue ='';
-            names!: [
-    {
-      name: 'Billy Green';
-
-    },
-
-    {
-      name: 'Gabriella Solis';
-
-    },
-    {
-      name: 'Tom Scavo';
-    },
-    {
-      name: 'Lynette Scavo';
-    },
-    {
-      name: 'Mike Delfino';
-    },
-    {
-      name: 'Gabriella Solis';
-    },
-    {
-      name: 'Carlos Solis';
-    },
-    {
-      name: 'Idie Britt';
+    search() {
+        console.log(this.searchValue);
     }
-  ];
-        
-    
-    search(){
-        console.log(this.searchValue)
-   }
-    
-        
-    
 }
 </script>
 
