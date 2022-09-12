@@ -24,7 +24,6 @@ body {
 }
 .main-block {
     position: relative;
-    
 }
 .grid {
     display: grid;
@@ -32,10 +31,8 @@ body {
     @media (min-width: $width) {
         grid-template-rows: none;
         grid-template-columns: 55% 45%;
-  
     }
-  }
- 
+}
 
 .grid-password {
     display: grid;
@@ -182,6 +179,5 @@ body {
         display: block;
         background-color: #ffffff;
         padding-right: 40px;
-      
     }
 }
