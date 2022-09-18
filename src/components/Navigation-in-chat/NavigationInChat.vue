@@ -18,18 +18,23 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch, Model } from 'vue-property-decorator';
-@Component
-export default class CreateAccount extends Vue {
-    // @Prop()  value!: string
-    // val:string = this.value
-    @Model('input', { type: String }) readonly value!: string;
+import Vue from 'vue';
 
-    @Watch('child')
-    search(val: string) {
+export default Vue.extend ({
+    name: 'NavigationInChat',
+   data() {
+    return {
+        value:''
+    }
+   },
+   
+methods: {
+ search(val: string) {
         this.$emit('search', val);
     }
 }
+   
+})
 </script>
 
 <style lang="scss" scoped>

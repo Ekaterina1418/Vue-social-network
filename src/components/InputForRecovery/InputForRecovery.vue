@@ -17,12 +17,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-@Component
-export default class InputForRecovery extends Vue {
-    email = '';
+import Vue from 'vue';
 
-    async forgotPassword(): Promise<void> {
+export default  Vue.extend ({
+    data() {
+        return {
+         email :'',
+        }
+    },
+    
+methods: {
+ async forgotPassword(): Promise<void> {
         try {
             await this.$store.dispatch('forgotPassword', this.email);
             this.$router.push('/signin');
@@ -31,6 +36,8 @@ export default class InputForRecovery extends Vue {
         } catch (error) {}
     }
 }
+   
+});
 </script>
 
 <style lang="scss" scoped>

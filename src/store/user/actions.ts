@@ -1,6 +1,6 @@
 import { ActionTree } from "vuex";
 import { UserState } from "./types";
-// import {mutation } from "./mutations"
+//  import {mutations } from "./mutations"
 import router from '@/router';
 import { getDatabase, ref, set } from 'firebase/database';
 import { auth } from '@/firebase';
@@ -112,7 +112,7 @@ export const actions: ActionTree<UserState,unknown> = {
             await signInWithPopup(auth, googleProvider);
         } catch (error) {
             throw error;
-            // alert(error.message)
+             alert(error.message)
         }
     },
     async facebook() {

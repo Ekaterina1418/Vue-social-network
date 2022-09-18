@@ -8,9 +8,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-@Component
-export default class HelloInBackground extends Vue {}
+import Vue from 'vue';
+
+export default  Vue.extend ({})
 </script>
 
 <style lang="scss">

@@ -7,9 +7,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
-@Component
-export default class ButtonCreate extends Vue {}
+import Vue from 'vue'
+export default Vue.extend ({})
 </script>
 
 <style lang="scss" scoped>

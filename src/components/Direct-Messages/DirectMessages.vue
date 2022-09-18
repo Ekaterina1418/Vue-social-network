@@ -1,9 +1,9 @@
 <template>
     <div class="person">
-        <div class="wrapper">
+        <div class="wrapper" >
             <slot name="image" />
             <div class="name">
-                <p class="name-billy"></p>
+                <p class="name-billy">{{ name }}</p>
                 <p class="name-message">{{ message }}</p>
             </div>
         </div>
@@ -15,13 +15,23 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator';
-@Component
-export default class DirectMessages extends Vue {
-    message = 'Thank you for sharing';
+import Vue from 'vue';
 
-    @Prop() names!: string;
-}
+export default  Vue.extend ({
+    name: 'DirectMessages',
+  props: {
+    message: {
+        type:String
+    },
+    name: {
+        type:String
+    },
+    img: {
+        type:String
+    }
+  }  
+   
+})
 </script>
 
 <style lang="scss" scoped>

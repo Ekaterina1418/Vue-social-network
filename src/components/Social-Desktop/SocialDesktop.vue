@@ -23,17 +23,17 @@
 </template>
 
 <script lang="ts">
-    import { Component, Vue } from 'vue-property-decorator';
-    @Component
-export default class extends Vue {
-   
-        async google():Promise<void> {
+    import Vue from 'vue';
+
+export default Vue.extend ({
+   methods: {
+  async google():Promise<void> {
             try {
                 await this.$store.dispatch('google');
                 this.$router.push('/messages');
                 // eslint-disable-next-line no-empty
             } catch (e) {}
-        }
+        },
         async facebook():Promise<void> {
             try {
                 await this.$store.dispatch('facebook');
@@ -41,15 +41,17 @@ export default class extends Vue {
 
                 // eslint-disable-next-line no-empty
             } catch (e) {}
-        }
+        },
         async gitHub():Promise<void> {
             try {
                 await this.$store.dispatch('gitHub');
                 this.$router.push('/messages');
                 // eslint-disable-next-line no-empty
             } catch (e) {}
-        }
-    }
+        },
+   },
+      
+    })
 
 </script>
 

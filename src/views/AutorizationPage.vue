@@ -6,11 +6,7 @@
                     <div class="img"></div>
                 </template>
                 <template v-slot:logotype>
-                    <img
-                        class="logotype"
-                        src="../components/BackGround/image/logotype.svg"
-                        alt="logotype"
-                    />
+                    <img class="logotype" src="../components/BackGround/image/logotype.svg" alt="logotype" />
                 </template>
             </backgrond-icon>
             <hello-in-background>
@@ -30,25 +26,13 @@
                     </welcome-back>
                     <div class="flex-icons">
                         <social-icons type="facebook">
-                            <img
-                                class="icon"
-                                src="../components/Icons/image/Facebook2.svg"
-                                alt="facebook"
-                            />
+                            <img class="icon" src="../components/Icons/image/Facebook2.svg" alt="facebook" />
                         </social-icons>
                         <social-icons type="apple">
-                            <img
-                                class="icon"
-                                src="../components/Icons/image/Apple.svg"
-                                alt="apple"
-                            />
+                            <img class="icon" src="../components/Icons/image/Apple.svg" alt="apple" />
                         </social-icons>
                         <social-icons type="google">
-                            <img
-                                class="icon"
-                                src="../components/Icons/image/Google2.svg"
-                                alt="google"
-                            />
+                            <img class="icon" src="../components/Icons/image/Google2.svg" alt="google" />
                         </social-icons>
                     </div>
                     <p class="paragraph-connect">Or connect with you email</p>
@@ -62,7 +46,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import Vue from 'vue';
 import SocialIcons from '@/components/Icons/SocialIcons.vue';
 import AuthForm from '@/components/Form/AuthForm.vue';
 import ButtonCreate from '@/components/Button/ButtonCreate.vue';
@@ -71,7 +55,8 @@ import WelcomeBack from '@/components/Welcome/WelcomeBack.vue';
 import SocialDesktop from '@/components/Social-Desktop/SocialDesktop.vue';
 import HelloInBackground from '@/components/HelloInBackgrond/HelloInBackground.vue';
 
-@Component({
+export default Vue.extend({
+    name: 'AutorizationPage',
     components: {
         SocialIcons,
         AuthForm,
@@ -79,15 +64,15 @@ import HelloInBackground from '@/components/HelloInBackgrond/HelloInBackground.v
         BackgrondIcon,
         WelcomeBack,
         SocialDesktop,
-        HelloInBackground,
+        HelloInBackground
     },
-})
-export default class AutorizationPage extends Vue {
-   
-    clickRouter() {
-        this.$router.push({ name: 'signup' });
-    }
-}
+    methods: {
+        clickRouter() {
+            this.$router.push({ name: 'signup' });
+        }
+    },
+
+});
 </script>
 
 <style lang="scss" scoped>

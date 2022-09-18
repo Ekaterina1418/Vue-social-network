@@ -3,13 +3,8 @@
         <div class="element-auxiliary">
             <label class="label-input"> NAME </label>
             <div class="input-icon_name">
-                <input
-                    class="input-email"
-                    type="text"
-                    placeholder="Anne Carry"
-                    v-model.trim="$v.name.$model"
-                    :class="{ 'error-border': $v.name.$error }"
-                />
+                <input class="input-email" type="text" placeholder="Anne Carry" v-model.trim="$v.name.$model"
+                    :class="{ 'error-border': $v.name.$error }" />
                 <p class="error" v-if="!$v.name.required">*Обязательное поле</p>
                 <p class="error" v-else-if="!$v.name.minLength">
                     Не менее 2 знаков
@@ -19,13 +14,8 @@
         <div class="element-auxiliary bottom">
             <label class="label-input"> EMAIL </label>
             <div class="input-icon_email">
-                <input
-                    class="input-email"
-                    type="text"
-                    placeholder="anne.carry@mail.com"
-                    v-model="$v.email.$model"
-                    :class="{ 'error-border': $v.email.$error }"
-                />
+                <input class="input-email" type="text" placeholder="anne.carry@mail.com" v-model="$v.email.$model"
+                    :class="{ 'error-border': $v.email.$error }" />
                 <img class="check" src="./image/Check.svg" alt="email" />
                 <p class="error" v-if="!$v.email.required">
                     *Обязательное поле
@@ -38,12 +28,8 @@
         <div class="element-auxiliary bottom-input">
             <label class="label-input">PASSWORD </label>
             <div class="input-icon_email">
-                <input
-                    class="input-email"
-                    type="password"
-                    :class="{ 'error-border': $v.email.$error }"
-                    v-model="$v.password.$model"
-                />
+                <input class="input-email" type="password" :class="{ 'error-border': $v.email.$error }"
+                    v-model="$v.password.$model" />
                 <img class="check" src="./image/Eye.svg" alt="eye" />
                 <p class="error" v-if="!$v.password.required">
                     *Обязательное поле
@@ -72,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import Vue from 'vue';
 import { email } from 'vuelidate/lib/validators';
 import { required, minLength } from 'vuelidate/lib/validators';
 import {
@@ -80,11 +66,16 @@ import {
     hasLowercase,
     hasSpecialChars,
 } from '@/vuelidate/validations';
-@Component
-export default class FormSignup extends Vue {
-    name = '';
-    email = '';
-    password = '';
+export default Vue.extend({
+    name: 'FormSignup',
+    data() {
+        return {
+            name: '',
+            email: '',
+            password: '',
+        }
+    },
+
 
     validations() {
         return {
@@ -103,22 +94,23 @@ export default class FormSignup extends Vue {
                 hasLowercase,
                 hasSpecialChars,
             },
-        };
-    }
-
-    async submitHandler():Promise<void> {
-        const forData = {
-            email: this.name,
-            password: this.password,
-            name: this.name,
-        };
-        try {
-            await this.$store.dispatch('register', forData);
-        } catch (e) {
-            // eslint-disable-next-line no-undef
         }
-    }
-}
+    },
+    methods: {
+        async submitHandler(): Promise<void> {
+            const forData = {
+                email: this.name,
+                password: this.password,
+                name: this.name,
+            }
+            try {
+                await this.$store.dispatch('register', forData);
+            } catch (e) {
+                // eslint-disable-next-line no-undef
+            }
+        }
+    },
+    });
 </script>
 
 <style lang="scss" scoped>

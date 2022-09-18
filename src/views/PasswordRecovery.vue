@@ -6,16 +6,12 @@
           <div class="img-password"></div>
         </template>
         <template v-slot:logotype>
-          <img
-            class="logotype-password"
-            src="../components/BackGround/image/logo.svg"
-            alt="logotype"
-          />
+          <img class="logotype-password" src="../components/BackGround/image/logo.svg" alt="logotype" />
         </template>
       </backgrond-icon>
       <hello-in-background>
         <p class="paragraph">Remember your password?</p>
-        <button class="button-blue" @click="clickRouter">Lognin</button>
+        <button class="button-blue" @click="clickRouter()">Lognin</button>
       </hello-in-background>
       <section class="registration-form">
         <div class="right-block">
@@ -31,13 +27,14 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import WelcomeBack from "@/components/Welcome/WelcomeBack.vue";
 import BackgrondIcon from "../components/BackGround/BackroundIcon.vue";
 import InputForRecovery from "../components/InputForRecovery/InputForRecovery.vue";
 import HelloInBackground from "@/components/HelloInBackgrond/HelloInBackground.vue";
 
-export default {
+export default Vue.extend({
   name: "PasswordRecovery",
   components: {
     BackgrondIcon,
@@ -53,7 +50,7 @@ export default {
       this.$router.push({ name: "signin" });
     },
   },
-};
+})
 </script>
 
 <style lang="scss" scoped>

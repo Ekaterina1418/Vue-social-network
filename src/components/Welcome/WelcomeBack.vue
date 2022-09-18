@@ -6,12 +6,18 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-  @Component
-  export default class AutorizationPage extends Vue {
-   disible = true
+  import Vue from 'vue';
+  
+  export default  Vue.extend ({
+    name: 'WelcomeBack',
+    data() {
+      return {
+         disible : true,
+      }
+    }
+  
 
-}
+})
 </script>
 
 <style lang="scss" scoped>
