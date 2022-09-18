@@ -14,7 +14,7 @@
                         <div class="amount">1</div>
                     </template>
                 </direct-messages>
-                  <direct-messages>
+                <direct-messages>
                     <template v-slot:image>
                         <img src="../assets/image/Avatar2.svg" alt="avatar" />
                     </template>
@@ -61,8 +61,7 @@
             <log-out />
             <chat-in-desktop />
         </div>
-
-        <bottom-nav>
+         <bottom-nav>
             <template v-slot:logotype>
                 <img class="nav-logotype" src="../components/Bottom-nav/icons/Logo.svg" alt="logotype" />
             </template>
@@ -157,7 +156,7 @@ export default Vue.extend({
     },
 
     methods: {
-        search():void {
+        search(): void {
             console.log(this.searchValue);
         }
     },
