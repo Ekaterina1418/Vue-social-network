@@ -1,7 +1,8 @@
 <template>
     <main class="main-for-message">
         <div class="block">
-            <navigation-in-chat v-model="searchValue" @input="search" />
+            
+            <navigation-in-chat v-model="searchValue" @input="search"/>
             <section class="background">
                 <navigation-group>
                     <h1 class="title-inbox">Inbox</h1>
@@ -40,6 +41,7 @@
                         <img src="../assets/image/Avatar5.svg" alt="avatar" />
                     </template>
                 </direct-messages>
+
                 <direct-messages>
                     <template v-slot:image>
                         <img src="../assets/image/Avatar6.svg" alt="avatar" />
@@ -57,11 +59,12 @@
                 </direct-messages>
             </section>
         </div>
+       
         <div class="block-chat">
-            <log-out />
+             <log-out />
             <chat-in-desktop />
         </div>
-         <bottom-nav>
+        <bottom-nav>
             <template v-slot:logotype>
                 <img class="nav-logotype" src="../components/Bottom-nav/icons/Logo.svg" alt="logotype" />
             </template>
@@ -86,17 +89,15 @@
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M26.08 27.59L28.67 25H19V23H28.67L26.08 20.41L27.5 19L32.5 24L27.5 29L26.08 27.59ZM31 15C32.1046 15 33 15.8954 33 17V21.67L31 19.67V17H17V31H31V28.33L33 26.33V31C33 32.1046 32.1046 33 31 33H17C15.89 33 15 32.1 15 31V17C15 15.89 15.89 15 17 15H31Z" />
                     </mask>
-                    <g mask="url(#mask0_784_5867)"></g>
+                            <g mask="url(#mask0_784_5867)"></g>
                 </svg>
             </template>
         </bottom-nav>
     </main>
 </template>
 
-<script lang="ts">
-
-import Vue from 'vue'
-import NavigationInChat from '@/components/Navigation-in-chat/NavigationInChat.vue';
+<script>
+import NavigationInChat from '../components/Navigation-in-chat/NavigationInChat.vue';
 import NavigationGroup from '@/components/NavigationGroup/NavigationGroup.vue';
 import DirectMessages from '@/components/Direct-Messages/DirectMessages.vue';
 import BottomNav from '@/components/Bottom-nav/BottomNav.vue';
@@ -104,8 +105,9 @@ import ChatInDesktop from '@/components/Chat/ChatInDesktop.vue';
 import LogOut from '@/components/User/LogOut.vue';
 
 
-export default Vue.extend({
-    components: {
+
+export default {
+      components:  {
         NavigationInChat,
         NavigationGroup,
         DirectMessages,
@@ -151,17 +153,17 @@ export default Vue.extend({
                     name: 'Idie Britt',
                     message: "Thank you for sharing"
                 }
-            ],
+            ]
         }
     },
 
     methods: {
-        search(): void {
+        search() {
             console.log(this.searchValue);
         }
-    },
+    }
 
-});
+};
 </script>
 
 <style>

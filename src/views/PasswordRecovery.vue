@@ -27,14 +27,14 @@
   </main>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
+
 import WelcomeBack from "@/components/Welcome/WelcomeBack.vue";
 import BackgrondIcon from "../components/BackGround/BackroundIcon.vue";
 import InputForRecovery from "../components/InputForRecovery/InputForRecovery.vue";
 import HelloInBackground from "@/components/HelloInBackgrond/HelloInBackground.vue";
 
-export default Vue.extend({
+export default {
   name: "PasswordRecovery",
   components: {
     BackgrondIcon,
@@ -50,7 +50,7 @@ export default Vue.extend({
       this.$router.push({ name: "signin" });
     },
   },
-})
+};
 </script>
 
 <style lang="scss" scoped>

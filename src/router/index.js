@@ -17,6 +17,7 @@ const routes = [
         path: '/signin',
         name: 'signin',
         component: AutorizationPage,
+        
     },
     {
         path: '/password-recovery',

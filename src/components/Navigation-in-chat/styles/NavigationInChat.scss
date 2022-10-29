@@ -60,11 +60,17 @@
     margin: 40px auto 60px;
   }
 }
-.nav-text {
+     .nav-text {
   color: #1e1f20;
   font-size: 12px;
   font-weight: 700;
   margin: 0 auto;
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+.block-mobile {
+ width: 85%;
   @media (min-width: 1024px) {
     display: none;
   }

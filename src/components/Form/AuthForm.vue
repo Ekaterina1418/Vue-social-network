@@ -46,8 +46,7 @@
     </form>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
 import { email } from 'vuelidate/lib/validators';
 import { required, minLength } from 'vuelidate/lib/validators';
 import {
@@ -56,7 +55,7 @@ import {
     hasSpecialChars,
 } from '@/vuelidate/validations';
 
-export default Vue.extend({
+export default {
     name: 'AuthForm',
     data() {
         return {
@@ -82,10 +81,10 @@ export default Vue.extend({
         };
     },
     methods: {
-        addPassword(): void {
+        addPassword() {
             this.$router.push({ name: 'password-recovery' });
         },
-        async submitHandler(): Promise<void> {
+        async submitHandler() {
             const forData = {
                 email: this.email,
                 password: this.password,
@@ -93,12 +92,12 @@ export default Vue.extend({
             try {
                 await this.$store.dispatch('login', forData);
 
-                // eslint-disable-next-line no-empty
-            } catch (e) { }
+                
+            } catch (e) {/** */ }
         },
     }
 
-});
+};
 </script>
 
 <style lang="scss" scoped>

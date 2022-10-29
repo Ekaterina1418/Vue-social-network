@@ -1,6 +1,9 @@
 <template>
     <nav class="nav-messages">
-        <div class="three-elements">
+        <div class="block-mobile">
+        <LogOut/>
+        </div>
+         <div class="three-elements">
             <div class="position-input">
                 <input
                     class="border-icon_search"
@@ -12,29 +15,29 @@
             <p class="nav-text">MESSAGES</p>
             <div class="border-icon_share">
                 <img src="./icons/Shape.svg" alt="shape" />
-            </div>
+               </div>
         </div>
     </nav>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+    <script>
+import LogOut from "../User/LogOut.vue";
 
-export default Vue.extend ({
-    name: 'NavigationInChat',
-   data() {
-    return {
-        value:''
-    }
-   },
-   
-methods: {
- search(val: string) {
-        this.$emit('search', val);
-    }
-}
-   
-})
+
+export default {
+    name: "NavigationInChat",
+    data() {
+        return {
+            value: '',
+        }
+    },
+    methods: {
+        search(val) {
+            this.$emit("search", val);
+        }
+    },
+    components: { LogOut }
+};
 </script>
 
 <style lang="scss" scoped>

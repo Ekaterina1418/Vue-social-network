@@ -1,9 +1,6 @@
-import { ActionTree } from "vuex";
-import { UserState } from "./types";
-//  import {mutations } from "./mutations"
 import router from '@/router';
 import { getDatabase, ref, set } from 'firebase/database';
-import { auth } from '@/firebase';
+import { auth } from '../firebase';
 import {
     GoogleAuthProvider,
     signInWithPopup,
@@ -18,12 +15,9 @@ import {
 } from 'firebase/auth';
 
 
-
-
-
-
-export const actions: ActionTree<UserState,unknown> = {
-    async register({ dispatch, commit }, details) {
+export default  {
+    actions: {
+        async register({ dispatch, commit }, details) {
         const { email, password, name } = details;
 
         try {
@@ -84,7 +78,7 @@ export const actions: ActionTree<UserState,unknown> = {
     },
     async logout({ commit }) {
         await signOut(auth);
-        commit('CLEAR_USER');
+        commit('SET_CLEAR');
         router.push('/signin');
     },
     async forgotPassword({ commit }, email) {
@@ -107,11 +101,9 @@ export const actions: ActionTree<UserState,unknown> = {
     },
     async google() {
         const googleProvider = new GoogleAuthProvider();
-        // eslint-disable-next-line no-useless-catch
         try {
             await signInWithPopup(auth, googleProvider);
         } catch (error) {
-            throw error;
              alert(error.message)
         }
     },
@@ -132,4 +124,5 @@ export const actions: ActionTree<UserState,unknown> = {
         }
         commit('SET_USER', auth.currentUser);
     },
-}
+    }
+};

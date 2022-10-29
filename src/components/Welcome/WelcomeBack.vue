@@ -5,10 +5,10 @@
   </div>
 </template>
 
-<script lang="ts">
-  import Vue from 'vue';
+<script>
   
-  export default  Vue.extend ({
+  
+  export default {
     name: 'WelcomeBack',
     data() {
       return {
@@ -17,7 +17,7 @@
     }
   
 
-})
+};
 </script>
 
 <style lang="scss" scoped>

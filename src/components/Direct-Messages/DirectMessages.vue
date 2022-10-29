@@ -14,10 +14,10 @@
     </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
 
-export default  Vue.extend ({
+
+export default {
     name: 'DirectMessages',
   props: {
     message: {
@@ -31,7 +31,7 @@ export default  Vue.extend ({
     }
   }  
    
-})
+}; 
 </script>
 
 <style lang="scss" scoped>

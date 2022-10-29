@@ -1,16 +1,14 @@
-import Vue from 'vue';
+import Vue from "vue";
 import Vuelidate from 'vuelidate';
-import "./vuelidate/registerComponentHooks";
 import App from './App.vue';
 import router from './router';
-import store from '@/store/main'
+import store from './store';
 import { auth } from './firebase';
 import './assets/style/styles.scss';
-import { CombinedVueInstance } from 'vue/types/vue';
 Vue.config.productionTip = false;
 
-Vue.use(Vuelidate as never);
-let app: CombinedVueInstance<Vue, object, object, object, Record<never, any>>;
+Vue.use(Vuelidate)
+let app
 auth.onAuthStateChanged(() => {
     if (!app) {
         app = new Vue({

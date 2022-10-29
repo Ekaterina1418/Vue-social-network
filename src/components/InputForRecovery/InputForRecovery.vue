@@ -16,10 +16,10 @@
     </form>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
 
-export default  Vue.extend ({
+
+export default {
     data() {
         return {
          email :'',
@@ -27,17 +27,17 @@ export default  Vue.extend ({
     },
     
 methods: {
- async forgotPassword(): Promise<void> {
+ async forgotPassword() {
         try {
             await this.$store.dispatch('forgotPassword', this.email);
             this.$router.push('/signin');
 
-            // eslint-disable-next-line no-empty
-        } catch (error) {}
+          
+        } catch (error) {/** */}
     }
 }
    
-});
+};
 </script>
 
 <style lang="scss" scoped>
