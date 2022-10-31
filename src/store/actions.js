@@ -46,7 +46,7 @@ export default  {
                 default:
                     alert('Что-то пошло не так');
             }
-            return console.log(details);
+            return details
         }
         commit('SET_USER', auth.currentUser);
         router.push('/signin');

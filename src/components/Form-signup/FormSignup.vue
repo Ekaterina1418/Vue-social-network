@@ -111,6 +111,7 @@ export default {
       };
       try {
         await this.$store.dispatch('register', forData);
+        console.log(forData)
       } catch (e) {
         /** */
       }
