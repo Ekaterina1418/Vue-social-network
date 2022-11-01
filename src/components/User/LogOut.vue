@@ -2,7 +2,7 @@
   <div class="user">
     <div class="go-out">
       <router-link to="/signin">
-        <img src="./icons/arrow.svg" alt="arrow" />
+       <button @click="logout"><img src="./icons/arrow.svg" alt="arrow" /></button>
       </router-link>
     </div>
   </div>

@@ -79,7 +79,7 @@ export default  {
     async logout({ commit }) {
         await signOut(auth);
         commit('SET_CLEAR');
-        router.push('/signin');
+        router.push('/');
     },
     async forgotPassword({ commit }, email) {
         try {

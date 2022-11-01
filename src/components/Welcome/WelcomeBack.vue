@@ -6,20 +6,16 @@
 </template>
 
 <script>
-  
-  
-  export default {
-    name: 'WelcomeBack',
-    data() {
-      return {
-         disible : true,
-      }
-    }
-  
-
+export default {
+  name: 'WelcomeBack',
+  data() {
+    return {
+      disible: true,
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "./styles/WelcomeBack.scss";
+@import './styles/WelcomeBack.scss';
 </style>

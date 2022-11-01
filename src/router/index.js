@@ -8,45 +8,32 @@ import { auth } from '../firebase';
 Vue.use(VueRouter);
 
 const routes = [
-    {
-        path: '/',
-        name: 'signup',
-        component: CreateAccount,
+  {
+    path: '/',
+    name: 'signup',
+    component: CreateAccount,
+  },
+  {
+    path: '/signin',
+    name: 'signin',
+    component: AutorizationPage,
+  },
+  {
+    path: '/password-recovery',
+    name: 'password-recovery',
+    component: PasswordRecovery,
+  },
+  {
+    path: '/messages',
+    name: 'messages',
+    component: FrendsMessages,
+    meta: {
+      requiresAuth: true,
     },
-    {
-        path: '/signin',
-        name: 'signin',
-        component: AutorizationPage,
-        
-    },
-    {
-        path: '/password-recovery',
-        name: 'password-recovery',
-        component: PasswordRecovery,
-       
-    },
-    {
-        path: '/messages',
-        name: 'messages',
-        component: FrendsMessages,
-        meta: {
-            requiresAuth: true,
-        },
-    },
+  },
 ];
 
-// const routes: Array<RouteConfig> = [
-//   {
 
-//   },
-//   {
-//     // route level code-splitting
-//     // this generates a separate chunk (about.[hash].js) for this route
-//     // which is lazy-loaded when the route is visited.
-//     component: () =>
-//       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-//   },
-// ];
 
 const router = new VueRouter({
     mode: 'history',

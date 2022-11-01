@@ -21,7 +21,7 @@
           class="input-email"
           type="text"
           placeholder="anne.carry@mail.com"
-          v-model="$v.email.$model"
+          v-model.trim="$v.email.$model"
           :class="{ 'error-border': $v.email.$error }"
         />
         <img class="check" src="./image/Check.svg" alt="email" />
@@ -38,7 +38,7 @@
           class="input-email"
           type="password"
           :class="{ 'error-border': $v.email.$error }"
-          v-model="$v.password.$model"
+          v-model.trim="$v.password.$model"
         />
         <img class="check" src="./image/Eye.svg" alt="eye" />
         <p class="error" v-if="!$v.password.required">*Обязательное поле</p>
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="login">
-      <button class="button-login" @click.prevent="submitHandler">
+      <button class="button-login" @click="submitHandler">
         Create an account
       </button>
       <p class="paragraph-login">Alreedy have an account Login</p>
@@ -105,7 +105,7 @@ export default {
   methods: {
     async submitHandler() {
       const forData = {
-        email: this.name,
+        email: this.email,
         password: this.password,
         name: this.name,
       };
