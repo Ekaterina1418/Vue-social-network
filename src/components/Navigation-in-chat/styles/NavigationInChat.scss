@@ -6,7 +6,7 @@
   @media (min-width: 1024px) {
     width: 100%;
     height: 56px;
-    padding:  0 20px;
+    padding: 0 30px;
     border: none;
   }
 }
@@ -60,7 +60,7 @@
     margin: 40px auto 60px;
   }
 }
-     .nav-text {
+.nav-text {
   color: #1e1f20;
   font-size: 12px;
   font-weight: 700;
@@ -70,7 +70,7 @@
   }
 }
 .block-mobile {
- width: 85%;
+  width: 93%;
   @media (min-width: 1024px) {
     display: none;
   }

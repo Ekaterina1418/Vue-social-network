@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="login">
-      <button class="button-login" @click="submitHandler">
+      <button class="button-login" @click.prevent="submitHandler">
         Create an account
       </button>
       <p class="paragraph-login">Alreedy have an account Login</p>
@@ -111,7 +111,8 @@ export default {
       };
       try {
         await this.$store.dispatch('register', forData);
-        console.log(forData)
+       
+        console.log(forData);
       } catch (e) {
         /** */
       }

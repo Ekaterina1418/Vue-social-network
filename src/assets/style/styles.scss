@@ -1,184 +1,195 @@
 $white: #ffffff;
 $width: 1024px;
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 *::after,
 *::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 html,
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-        sans-serif;
-    font-size: 14px;
-    line-height: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
 }
 .main-block {
-    position: relative;
+  position: relative;
 }
 .grid {
-    display: grid;
-    grid-template-rows: 24% 1fr;
-    @media (min-width: $width) {
-        grid-template-rows: none;
-        grid-template-columns: 55% 45%;
-    }
+  display: grid;
+  grid-template-rows: 24% 1fr;
+  @media (min-width: $width) {
+    grid-template-rows: none;
+    grid-template-columns: 55% 45%;
+  }
 }
 
 .grid-password {
-    display: grid;
-    grid-template-rows: 2fr 1fr;
-    @media (min-width: $width) {
-        grid-template-rows: none;
-        grid-template-columns: 55% 45%;
-    }
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  @media (min-width: $width) {
+    grid-template-rows: none;
+    grid-template-columns: 55% 45%;
+  }
 }
 .registration {
-    margin-top: -30px;
-    background-color: $white;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    @media (min-width: $width) {
-        margin-left: -5%;
-        margin-top: 0;
-        border-top-left-radius: 5%;
-        border-bottom-left-radius: 5%;
-    }
+  margin-top: -30px;
+  background-color: $white;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  @media (min-width: $width) {
+    margin-left: -5%;
+    margin-top: 0;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+  }
 }
 .registration-form {
-    background-color: $white;
-    border-radius: 30px;
-    height: 100%;
-    width: 100%;
-    margin-top: -63px;
+  background-color: $white;
+  border-radius: 30px;
+  height: 100%;
+  width: 100%;
+  margin-top: -63px;
 
-    @media (min-width: $width) {
-        margin-left: -5%;
-        margin-top: 0;
-        border-top-left-radius: 5%;
-        border-bottom-left-radius: 5%;
-    }
+  @media (min-width: $width) {
+    margin-left: -5%;
+    margin-top: 0;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+  }
 }
 .divider {
-    border-bottom: 5px solid rgb(167, 164, 164);
-    margin: 19px auto 0;
-    width: 40px;
-    border-radius: 40px;
+  border-bottom: 5px solid rgb(167, 164, 164);
+  margin: 19px auto 0;
+  width: 40px;
+  border-radius: 40px;
 }
 
 .paragraph-connect {
-    color: #8f92a1;
-    text-align: center;
+  color: #8f92a1;
+  text-align: center;
 }
 .paragraph {
-    margin: 10px 0 30px 0;
-    text-align: center;
-    color: $white;
-    font-weight: 500;
+  margin: 10px 0 30px 0;
+  text-align: center;
+  color: $white;
+  font-weight: 500;
 }
 .flex-icons {
-    display: flex;
-    margin: 28px auto;
-    width: 90%;
+  display: flex;
+  margin: 28px auto;
+  width: 90%;
 }
 .background {
-    background-color: #f7f7f7;
-    width: 100%;
-    height: 581px;
-    @media (min-width: 1024px) {
-        grid-column-start: 2;
-        height: 100%;
-        margin-bottom: 56px;
-    }
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 578px;
+  @media (min-width: 1024px) {
+    height: 100%;
+    padding-bottom: 56px;
+  }
 }
 .amount {
-    width: 18px;
-    height: 18px;
-    color: $white;
-    text-align: center;
-    background: #ff4e4e;
-    border-radius: 6px;
-    font-size: 10px;
-    line-height: 20px;
+  width: 18px;
+  height: 18px;
+  color: $white;
+  text-align: center;
+  background: #ff4e4e;
+  border-radius: 6px;
+  font-size: 10px;
+  line-height: 20px;
 }
 .time {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
 }
 .main-for-message {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  @media (min-width: 1024px) {
     display: flex;
-    flex-direction: column;
-    background-color: #f7f7f7;
-    @media (min-width: 1024px) {
-        display: grid;
-        grid-template: repeat(3, 1fr);
-        grid-auto-flow: column;
-        grid-template-columns: 10% 40% 50%;
-    }
+    flex-direction: row;
+  }
 }
-
+.link {
+  text-decoration: none;
+}
+.container-chat {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
 .block {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 1024px) {
+    order: 2;
+    width: 40%;
+  }
 }
 .block-chat {
-    display: none;
-       
+  display: none;
 }
 .nav-logotype {
-    display: none;
-    @media (min-width: 1024px) {
-        display: block;
-        margin: 0 auto;
-    }
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 768px) {
-    .logotype {
-        width: 15%;
-        top: 9%;
-    }
+  .logotype {
+    width: 15%;
+    top: 9%;
+  }
 }
 @media (min-width: $width) {
-    .right-block {
-        margin: 80px auto;
-        width: 70%;
-    }
+  .right-block {
+    margin: 80px auto;
+    width: 70%;
+  }
 
-    .divider {
-        display: none;
-    }
-    .paragraph-connect {
-        display: none;
-    }
+  .divider {
+    display: none;
+  }
+  .paragraph-connect {
+    display: none;
+  }
 }
 @media (min-width: 425px) {
-    .logotype-password {
-        width: 35%;
-        top: 30%;
-    }
+  .logotype-password {
+    width: 35%;
+    top: 30%;
+  }
 }
 @media (min-width: 768px) {
-    .logotype-password {
-        width: 30%;
-        top: 30%;
-        left: 30%;
-    }
-    .block-chat {
-        display: block;
-        background-color: #ffffff;
-        padding-right: 40px;
-    }
+  .logotype-password {
+    width: 30%;
+    top: 30%;
+    left: 30%;
+  }
+}
+@media (min-width: 1024px) {
+  .block-chat {
+    display: block;
+    background-color: #ffffff;
+    padding-right: 40px;
+    order: 3;
+    width: 45%;
+  }
 }

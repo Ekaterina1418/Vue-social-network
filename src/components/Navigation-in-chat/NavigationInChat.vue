@@ -1,7 +1,6 @@
 <template>
     <nav class="nav-messages">
         <div class="block-mobile">
-        <LogOut/>
         </div>
          <div class="three-elements">
             <div class="position-input">
@@ -21,7 +20,6 @@
 </template>
 
     <script>
-import LogOut from "../User/LogOut.vue";
 
 
 export default {
@@ -36,7 +34,6 @@ export default {
             this.$emit("search", val);
         }
     },
-    components: { LogOut }
 };
 </script>
 

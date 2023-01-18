@@ -1,14 +1,29 @@
 .nav-bottom {
   background: #0659fd;
   border-radius: 32px 32px 0px 0px;
+  padding: 35px 0;
+  @media (min-width: 1024px) {
+    order: 1;
+    width: 15%;
+    border-radius: 0;
+  }
+}
+.wrapper-nav {
+  @media (min-width: 1024px) {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.nav-desktop {
+  border-radius: 32px 32px 0px 0px;
   padding: 25px 0 59px;
   @media (min-width: 1024px) {
-    grid-column-start: 1;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    border-radius: inherit;
+    padding-top: 42px;
+    padding-bottom: 60px;
   }
 }
 .button-icon {
@@ -28,6 +43,7 @@
   @media (min-width: 1024px) {
     width: 48px;
     height: 48px;
+    margin-top: 40px;
   }
 }
 .setting {
@@ -43,11 +59,10 @@
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
-    justify-content: center;
-    align-items: center;
     width: 48px;
     height: 48px;
     fill: #ffffff;
+    order: 2;
     &:hover {
       background: #ffffff;
       fill: #0659fd;
@@ -62,9 +77,15 @@
   margin: 0 auto;
 
   @media (min-width: 1024px) {
+    order: 1;
     flex-direction: column;
     align-items: center;
-    height: 50%;
+    margin-top: 98px;
+    margin-bottom: 320px;
+
+    :nth-last-of-type(6) {
+      margin-top: 0;
+    }
     :nth-last-of-type(4) {
       display: none;
     }
